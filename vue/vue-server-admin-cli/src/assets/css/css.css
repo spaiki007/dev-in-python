@@ -1,0 +1,608 @@
+body {
+    margin: 0;
+    padding: 0;
+	font-family: "Trebuchet MS";
+	background-image: url("../img/background.png");
+	color: white;
+}
+.main {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+	border-bottom: 2px solid white;
+}
+.separ {
+    margin: 0 .15rem .15rem;
+	font-size: 1.4rem;
+}
+.header a {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: tomato;
+    text-decoration: none;
+	margin-bottom: .15rem;
+}
+
+.leftBar {
+    display: flex;
+    flex-direction: column;
+	width: 20%;
+}
+.leftBar a {
+	text-decoration: none;
+	color: white;
+	margin: 0 0 1rem;
+	text-transform: uppercase;
+	border-bottom: 1px solid white;
+	padding-bottom: .15rem;
+}
+.wrap_content {
+    margin: 1rem;
+    display: flex;
+}
+
+.content {
+    width: 80%;
+    margin-left: 1rem;
+}
+.block h2 {
+    margin: 0 0 1rem;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.object {
+    display: flex;
+	margin: 1rem 0;
+	align-items: center;
+	border-bottom: 1px solid #3b3838;
+}
+
+.object_name, .sc {
+    color: white;
+    text-decoration: none;
+	margin-bottom: .15rem;
+}
+.separator {
+    margin: 0 .5rem .15rem;
+}
+.add_object {
+    display: flex;
+    justify-content: flex-end;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin-bottom: 1rem;
+}
+.checkbox input {
+    margin: 0 .5rem 0 0;
+}
+.checkbox label {
+    margin: 0;
+}
+
+.pagination_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagin {
+    margin: .5rem;
+    color: wheat;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: .25rem .5rem;
+}
+.pagin.p_activ {
+    background: tomato;
+}
+.this_poster {
+    height: 50px;
+    width: 50px;
+}
+.this_poster img {
+	width: 50px;
+	height: 50px;
+}
+
+.pagination_block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagin {
+    margin: .5rem;
+    color: wheat;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: .25rem .5rem;
+}
+.pagin.p_activ {
+    background: tomato;
+}
+.delete_objects_all {
+    display: flex;
+    justify-content: flex-end;
+}
+.selectParent {
+    display: flex;
+	flex-direction: column;
+}
+.selectParent > div {
+    margin: 0 0 1rem;
+}
+.selectParent > div > div{
+	height: 250px;
+    overflow-y: scroll;
+}
+.category_link {
+    display: flex;
+    text-decoration: none;
+}
+.category_link, .category, .product {
+
+    padding: .25rem .5rem;
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+.category_link,.category{
+	margin: 0 .5rem .5rem 0;
+}
+.product {
+	margin: 0 .5rem .5rem .5rem;
+}
+
+.page-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabs-head {
+    display: flex;
+	margin: 1em 0;
+}
+
+.tab {
+    margin: 0 1rem 0 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    color: gray;
+}
+
+.tab.active {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.tab-content {
+    margin-top: 1em;
+}
+
+.tab-content .name {
+    margin-bottom: .5em;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+	margin-bottom: 1rem;
+}
+.block-add-prop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.addProp {
+    width: 48%;
+    text-align: center;
+}
+.prop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid;
+	padding-bottom: .25rem;
+	margin: 1rem 0;
+}
+.activProp {
+	margin: 1rem 0 2rem;
+}
+
+.viewImages {
+    width: 250px;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	border-radius: 10px;
+	margin: 1rem 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	flex-direction: column;
+}
+
+.imagesBlock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	flex-wrap: wrap;
+	margin-top: 1rem;
+}
+.deleteImages {
+    width: 100%;
+    background: tomato;
+    padding: .25rem .5rem;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.viewImages.main {
+    box-shadow: 0 0 5px white;
+}
+.sub {
+    width: 100%;
+}
+.inputPoster {
+    background: white;
+    color: #6c757d;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.inputPoster input {
+    margin: 0;
+}
+.wrap-poster {
+    display: flex;
+    align-items: center;
+}
+.wrap-poster a {
+    margin-bottom: 1rem;
+	margin-right: 1em;
+}
+.image-name {
+    margin-left: 1rem;
+}
+.select-image {
+    background: #0062cc;
+    color: white;
+    padding: .5rem 1rem;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+}
+.select-image:hover {
+    background: #0069d9;
+}
+.activePoster {
+    width: 40px;
+}
+.activImage {
+    background: #0d65c9;
+    padding: .15rem .5rem;
+}
+.key, .val {
+    width: 40%;
+}
+.deleteBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.customDeleteBlock button {
+    width: 175px;
+    margin-right: .5rem;
+}
+.customDeleteBlock {
+    display: flex;
+}
+.buttonList {
+    max-width: 175px;
+}
+.message {
+    margin: 1rem 0;
+    padding: .5rem 1rem;
+    border-radius: .25em;
+}
+.wrap_select_block {
+    position: relative;
+	margin-bottom: 1rem;
+}
+.select_block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.change {
+    background: #0062cc;
+    color: white;
+    height: calc(1.5em + .75rem + 2px);
+    border-bottom-right-radius: .25em;
+    border-top-right-radius: .25em;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	cursor: pointer;
+}
+.change:hover{
+	background: #0069d9;
+}
+.active_select.form-control{
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+}
+.active_select {
+    color: hsl(0, 0%, 50%);
+}
+
+.change .fas.fa-sort-down {
+    margin-bottom: .25em;
+}
+.name_field {
+    margin-bottom: .5rem;
+}
+.select_elements {
+    background: white;
+    position: absolute;
+    width: 100%;
+    color: black;
+	box-shadow: 0 0 10px grey;
+    z-index: 1;
+}
+.select_element {
+    padding: .375rem .75rem;
+	cursor: pointer;
+}
+.user-content {
+    margin-bottom: 1rem;
+}
+.menu-block {
+    display: flex;
+    flex-direction: column;
+}
+.menu-block .child {
+    display: flex;
+    flex-direction: column;
+    font-size: .9em;
+    margin-left: .5em;
+}
+.color {
+    height: 15px;
+    width: 50px;
+}
+.block-colors {
+    display: flex;
+    justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.block-colors .color {
+	margin-left: 1em;
+	cursor: pointer;
+	-webkit-transition: all .5s ease 0s;
+	transition: all .5s ease 0s;
+	padding: 0 .25rem;
+	text-align: center;
+	width: 50px;
+	height: 25px;
+}
+
+.block-colors .color:hover {
+	opacity: 1;
+}
+
+.block-colors .color-active {
+	opacity: 1;
+	box-shadow: 0 0 5px white inset;
+}
+.add-images {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.gifts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.gift {
+    background: #d53b3b;
+    padding: .5em 1em;
+	transition: background 0.5s ease;
+	cursor: pointer;
+}
+
+.gift-active {
+    background: #1ca13e;
+    padding: .5em 1em;
+	transition: background 0.5s ease;
+	cursor: pointer;
+}
+
+.form .name {
+    margin-bottom: .5em;
+}
+
+.wrap-characteristics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+}
+
+.addCharacteristics {
+    display: flex;
+    justify-content: center;
+}
+
+.addCharacteristics .btn.btn-success {
+    width: 50%;
+}
+
+.characteristics {
+    margin-bottom: 1em;
+}
+
+.characteristic {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-bottom: 1px dashed;
+	padding-bottom: .25em;
+	margin-top: 2em;
+	grid-gap: 20px;
+	cursor: pointer;
+}
+
+.characteristic div {
+    display: flex;
+	align-items: center;
+	justify-self: flex-start;
+}
+
+.characteristic-val {
+    justify-self: center;
+}
+
+.characteristic-del {
+    justify-self: flex-end;
+	cursor: pointer;
+}
+
+.wrap-color {
+    display: flex;
+    align-items: center;
+}
+
+.color {
+    height: 15px;
+    width: 50px;
+}
+
+.add-acces {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.add-acces .wrap_select_block {
+    width: 100%;
+    margin: 0;
+}
+
+.accessories {
+    margin-top: 1em;
+}
+
+.accessorie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+	border-bottom: 1px dashed;
+	margin-bottom: 1em;
+}
+
+.accessorie .name {
+    margin: 0;
+}
+
+.accessorie .delete-acces {
+    padding: .25em .5em;
+    background: #d53b3b;
+    margin: 1em 0;
+	cursor: pointer;
+}
+
+.object.head.x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.object.x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.remove_obj {
+    margin-right: 1em;
+	margin-bottom: 0;
+}
+
+.custom-comments {
+    margin-top: 2em;
+}
+
+.add-colors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.add-colors .form-control, .colors .form-control {
+    margin-bottom: 0;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr auto auto auto;
+    grid-gap: 10px;
+    align-items: center;
+	margin: 1em 0;
+}
+
+.wrap-colors {
+    margin-top: 1em;
+}
+
+.product-color-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.product-color-block .color {
+    width: 100%;
+    height: 100%;
+}
+
+.color-img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.add-image-block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+	grid-gap: 1em;
+}
+
+.add-image-block .form-control {
+    margin-bottom: 0;
+}

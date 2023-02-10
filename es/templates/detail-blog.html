@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block content %}
+
+	<div class="wrap-content">
+		<div class="breacrumbs-block">
+			<div class="breacrumbs">
+				<a href="/" class="breacrumbs-name">Главная</a>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<a href="/blog/page/1" class="breacrumbs-name active-crumbs">Блог</a>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name active-crumbs">{{ object.name }}</div>
+			</div>
+			<div class="social-block">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+			</div>
+		</div>
+		
+		<h1 class="order-name">{{ object.name }}</h1>
+  
+		<div class="detatil-blog">
+			<img class="blog-poster" src="http://localhost:81/{{ object.poster }}/poster.{{ object.img_format }}">
+			<div class="blog-content">
+				<p>{{ object.pre_content }}</p>
+				{{ object.content | safe }}
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

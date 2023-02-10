@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>Aутентификация</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="Aутентификация" />
+
+	<link rel="stylesheet" type="text/css" href="/static/css/css.css" />
+</head>
+<body>
+	
+	<div class="margin">
+		<h1 class="product-order-h1">Aутентификация</h1>
+		<div class="auth-form-block-wrapper">
+			<div class="auth-form-block">
+				<form class="auth-form" action="/auth" method="post" accept-charset="utf-8" enctype="application/x-www-form-urlencoded">
+					<input name="action" type="text" value="auth" hidden />
+					<input id="login" name="login" type="text" value="" placeholder="Логин" autocomplete='off'>
+					<input id="password" name="password" type="password" value="" placeholder="Пароль" autocomplete='off'>
+					<button type="submit">Войти</button>
+					<p class="error"></p>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<a href="https://freelance.ru/python007" class="link_developer">Эффективная разработка сайтов</a>
+	</div>
+
+</body>
+</html>

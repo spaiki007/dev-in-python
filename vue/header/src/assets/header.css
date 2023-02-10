@@ -1,0 +1,92 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('fonts/open-sans/OpenSans.eot');
+  src: url('fonts/open-sans/OpenSans.eot?#iefix') format('embedded-opentype'),
+       url('fonts/open-sans/OpenSans.svg#OpenSans') format('svg'),
+       url('fonts/open-sans/OpenSans.ttf') format('truetype'),
+       url('fonts/open-sans/OpenSans.woff') format('woff'),
+       url('fonts/open-sans/OpenSans.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('fonts/open-sans-light/OpenSans-Light.eot');
+  src: url('fonts/open-sans-light/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+       url('fonts/open-sans-light/OpenSans-Light.svg#OpenSans-Light') format('svg'),
+       url('fonts/open-sans-light/OpenSans-Light.ttf') format('truetype'),
+       url('fonts/open-sans-light/OpenSans-Light.woff') format('woff'),
+       url('fonts/open-sans-light/OpenSans-Light.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'OpenSans-Semibold';
+	src: url('fonts/open-sans-semibold/OpenSans-Semibold.eot');
+	src: url('fonts/open-sans-semibold/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('fonts/open-sans-semibold/OpenSans-Semibold.svg#OpenSans-Semibold') format('svg'),
+		url('fonts/open-sans-semibold/OpenSans-Semibold.ttf') format('truetype'),
+		url('fonts/open-sans-semibold/OpenSans-Semibold.woff') format('woff'),
+		url('fonts/open-sans-semibold/OpenSans-Semibold.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('fonts/open-sans-bold/OpenSans-Bold.eot');
+  src: url('fonts/open-sans-bold/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/open-sans-bold/OpenSans-Bold.svg#OpenSans-Bold') format('svg'),
+       url('fonts/open-sans-bold/OpenSans-Bold.ttf') format('truetype'),
+       url('fonts/open-sans-bold/OpenSans-Bold.woff') format('woff'),
+       url('fonts/open-sans-bold/OpenSans-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria';
+  src: url('fonts/geometria/Geometria.eot');
+  src: url('fonts/geometria/Geometria.eot?#iefix') format('embedded-opentype'),
+       url('fonts/geometria/Geometria.svg#Geometria') format('svg'),
+       url('fonts/geometria/Geometria.ttf') format('truetype'),
+       url('fonts/geometria/Geometria.woff') format('woff'),
+       url('fonts/geometria/Geometria.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geometria-Bold';
+  src: url('fonts/geometria-bold/Geometria-Bold.eot');
+  src: url('fonts/geometria-bold/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/geometria-bold/Geometria-Bold.svg#Geometria') format('svg'),
+       url('fonts/geometria-bold/Geometria-Bold.ttf') format('truetype'),
+       url('fonts/geometria-bold/Geometria-Bold.woff') format('woff'),
+       url('fonts/geometria-bold/Geometria-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	font-size: 0.75em;
+	box-sizing: border-box;
+}
+
+*, ::before, ::after {
+	box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	color: black;
+	font-family: 'OpenSans', arial;
+	overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}

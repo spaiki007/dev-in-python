@@ -1,0 +1,294 @@
+{% extends "index.html" %}
+
+{% block javascript %}
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<script src="/static/js/comments.js"></script>
+{% endblock %}
+
+{% block content %}
+
+	<div class="wrap-content">
+		<div class="breacrumbs-block">
+			<div class="breacrumbs">
+				<div class="breacrumbs-name">Главная</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name active-crumbs">Отзывы о магазине</div>
+			</div>
+			<div class="social-block">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+			</div>
+		</div>
+		
+		<h1 class="order-name">Отзывы о магазине</h1>
+		
+		<div class="comment-all">
+		
+			<div class="spec-line">
+			
+				<div class="cust-sort-block">
+					<div class="title">
+						<div class="name">сортировать по</div>
+						<img class="icon" src="/static/img/arrow-top-bottom.png">
+					</div>
+					<div class="cust-sort-by">
+						<a href="/shop/comments/1">дате</a>
+						<a href="/shop/comments/1?sort=0">рейтингу от 1 до 5</a>
+						<a href="/shop/comments/1?sort=1">рейтингу от 5 до 1</a>
+					</div>
+				</div>
+				
+				<div class="add-comments">оставить отзыв</div>
+				
+				<div id="comments-form" class="callback-block">
+					<div class="callback-back"></div>
+					<div class="callback-form-block">
+						<div class="callback-form">
+							<div class="callback-form-head">
+								<div class="name">Оставить отзыв</div>
+								<img src="/static/img/close.png">
+							</div>
+							<div class="icon-border"></div>
+							<div class="order-form-input-block">
+								<div class="wrap-order-form-input">
+									<input id="user-name" placeholder="*Имя" class="order-form-input">
+								</div>
+							</div>
+							
+							<div class="order-form-input-block">
+								<div class="wrap-order-form-input">
+									<input id="user-city" placeholder="*Город" class="order-form-input">
+								</div>
+							</div>
+							
+							<div class="comments-rating set-rating">
+								<div class="name">Ваш рейтинг:</div>
+								<img class="star" src="/static/img/raiting-fill.png" data-rating="1"/>
+								<img class="star" src="/static/img/raiting.png" data-rating="2"/>
+								<img class="star" src="/static/img/raiting.png" data-rating="3"/>
+								<img class="star" src="/static/img/raiting.png" data-rating="4"/>
+								<img class="star" src="/static/img/raiting.png" data-rating="5"/>
+							</div>
+							
+							<div class="order-form-input-block">
+								<div class="wrap-order-form-input">
+									<input id="user-positive" placeholder="Плюсы" class="order-form-input">
+								</div>
+							</div>
+							
+							<div class="order-form-input-block">
+								<div class="wrap-order-form-input">
+									<input id="user-negative" placeholder="Минусы" class="order-form-input">
+								</div>
+							</div>
+							
+							<div class="order-form-input-block">
+								<div class="order-form-textarea-block">
+									<div class="wrap-order-form-textarea">
+										<textarea  id="user-comment" placeholder="*Комментарий..." class="order-form-textarea"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="err"></div>
+							<div class="send-request active comment">
+								<div class="wrap-callback">
+									<div class="callback-background"><div class="wrap-callback-background"></div></div>
+									<div class="callback"><div class="callback-name">Отправить</div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			
+			<div class="comments-slider-block">
+				<div class="comments-slider-left">
+					<div class="comments-slider-arrow-left">
+						<img src="/static/img/arrow-left.png">
+					</div>
+
+					<div class="comments-slider-content">
+						<div class="comments-rating">
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+						</div>
+						<div class="procent-rating">{{ rating.1.procent }}%</div>
+						<div class="count-rating">{{ rating.1.count }} отзывов</div>
+					</div>
+					<div class="comments-slider-content x768">
+						<div class="comments-rating">
+							<img class="star" src="/static/img/raiting-fill.png" />
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+						</div>
+						<div class="procent-rating">{{ rating.2.procent }}%</div>
+						<div class="count-rating">{{ rating.2.count }} отзывов</div>
+					</div>
+					<div class="comments-slider-content x768">
+						<div class="comments-rating">
+							<img class="star" src="/static/img/raiting-fill.png" />
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+						</div>
+						<div class="procent-rating">{{ rating.3.procent }}%</div>
+						<div class="count-rating">{{ rating.3.count }} отзывов</div>
+					</div>
+					<div class="comments-slider-content x768">
+						<div class="comments-rating">
+							<img class="star" src="/static/img/raiting-fill.png" />
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting.png"/>
+						</div>
+						<div class="procent-rating">{{ rating.4.procent }}%</div>
+						<div class="count-rating">{{ rating.4.count }} отзывов</div>
+					</div>
+					<div class="comments-slider-content x768">
+						<div class="comments-rating">
+							<img class="star" src="/static/img/raiting-fill.png" />
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+							<img class="star" src="/static/img/raiting-fill.png"/>
+						</div>
+						<div class="procent-rating">{{ rating.5.procent }}%</div>
+						<div class="count-rating">{{ rating.5.count }} отзывов</div>
+					</div>
+					
+					<div class="comments-slider-arrow-right">
+						<img src="/static/img/slider-arrow-right.png">
+					</div>
+				</div>
+				<div class="comments-slider-right">
+					<div class="comments-slider-right-name">
+						Отзывов: {{ countCommnets }}
+					</div>
+					<div class="comments-slider-right-positive-value-block">
+						<div class="comments-slider-right-positive-value">
+							<div class="comments-slider-right-negative-value-background" style="width:{{ rating.positive.procent }}%"></div>
+						</div>
+						<div class="comments-slider-right-positive-information">
+							<div class="comments-slider-right-positive-information-left">Плюсов</div>
+							<div class="comments-slider-right-positive-information-right">{{ rating.positive.count }}</div>
+						</div>
+					</div>
+					
+					<div class="comments-slider-right-negative-value-block">
+						<div class="comments-slider-right-positive-value">
+							<div class="comments-slider-right-positive-value-background" style="width:{{ rating.negative.procent  }}%"></div>
+						</div>
+						<div class="comments-slider-right-positive-information">
+							<div class="comments-slider-right-positive-information-left">Минусов</div>
+							<div class="comments-slider-right-positive-information-right">{{ rating.negative.count }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="comments">
+				
+				{% for comment in comments %}
+				
+					{% if comment.cid == 0 %}
+						<div class="main-comment">
+							<div class="main-comment-top">
+								<div class="main-comment-icon">
+									<img src="/static/img/user-icon.png">
+								</div>
+								
+								<div class="comments-main-info-block">
+									<div class="wrap-wrap-main-comment-top">
+										<div class="main-comment-name">{{ comment.user_name }}</div>
+										<div class="main-comment-city">({{ comment.city }})</div>
+									</div>
+									<div class="blog-date">
+										<img class="blog-date-icon" src="/static/img/blog-date-icon.png">
+										<div class="blog-date-date">{{ comment.created | dateformat }}</div>
+									</div>
+									<div class="product-rating">
+										{% for i in range(0, 5) %}
+											{% if comment.rating > i %}
+												<img class="star" src="/static/img/raiting-fill.png">
+											{% else %}
+												<img class="star" src="/static/img/raiting.png">
+											{% endif %}
+										{% endfor %}
+									</div>
+								</div>
+							</div>
+							<p class="main-comment-body">
+								{% if comment.status %}
+									{{ comment.name }}
+								{% else %}
+									комментарий проверяется...
+								{% endif%}
+							</p>
+							
+							<div class="positive-and-negative-content">
+							
+								{% if comment.positive != '' %}
+									<div class="positive-block">
+										<div class="img"><img src="/static/img/like.png"></div>
+										<div class="comments-content">{{ comment.positive }}</div>
+									</div>
+								{% endif %}
+								
+								{% if comment.negative != '' %}
+									<div class="negative-block">
+										<div class="img"><img src="/static/img/dislakes.png"></div>
+										<div class="comments-content">{{ comment.negative }}</div>
+									</div>
+								{% endif %}
+								
+							</div>
+							
+							{% for sub_comments in comments %}
+								{% if comment.id == sub_comments.cid %}
+									<div class="sub-comments">
+										<div class="name">администратор</div>
+										<div class="comments-content">
+											{{ sub_comments.name }}
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+							
+						</div>
+					{% endif %}
+				{% endfor %}
+				
+				<div class="pagination-block">
+					<div class="pagination-name">Страницы:</div>
+					{% for i in range(1, paginations.allPages+1) %}
+						{% if paginations.active == i %}
+							<div class="pagination-link pagination-active-link">{{ i }}</div>
+						{% else %}
+							<a href="/shop/comments/{{ i }}{% if sort %}?sort={{ sort }}{% endif%}" class="pagination-link">{{ i }}</a>
+						{% endif %}
+
+					{% endfor %}
+
+				</div>
+				
+			</div>
+
+		</div>
+
+		
+	</div>
+
+{% endblock %}

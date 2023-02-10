@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Geometria-Bold';
+  src: url('Geometria-Bold.svg#Geometria-Bold') format('svg'),
+       url('Geometria-Bold.ttf') format('truetype'),
+       url('Geometria-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,58 @@
+{% extends "index.html" %}
+{% block content %}
+
+	<div class="wrap-content">
+		<div class="breacrumbs-block">
+			<div class="breacrumbs">
+				<a href="/" class="breacrumbs-name">Главная</a>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name active-crumbs">Блог</div>
+			</div>
+			<div class="social-block">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+			</div>
+		</div>
+		
+		<h1 class="order-name">Блог</h1>
+  
+		<div class="blogs-block">
+		
+			<div class="blogs">
+				{% for object in blogs %}
+					<div class="blog">
+						<div class="blog-img">
+							<img src="{{ object.poster }}">
+						</div>
+						<a href="/blog/{{ object.slug }}" class="blog-name">{{ object.name }}</a>
+						<div class="blog-content">{{ object.pre_content }}</div>
+						<div class="blog-date">
+							<img class="blog-date-icon" src="/static/img/blog-date-icon.png">
+							<div class="blog-date-date">{{ object.created | dateformat }}</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="pagination-block">
+				<div class="pagination-name">Страницы:</div>
+				{% for i in range(1, paginations.allPages+1) %}
+					{% if paginations.active == i %}
+						<div class="pagination-link pagination-active-link">{{ i }}</div>
+					{% else %}
+						<a href="/blog/page/{{ i }}{% if sort %}?sort={{ sort }}{% endif%}" class="pagination-link">{{ i }}</a>
+					{% endif %}
+				{% endfor %}
+			</div>
+			
+		</div>
+
+		
+	</div>
+
+{% endblock %}

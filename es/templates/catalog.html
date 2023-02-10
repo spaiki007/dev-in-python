@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+
+{% block javascript %}
+<link href=/static/catalog-app/css/chunk-vendors.6764dacd.css rel=preload as=style>
+<link href=/static/catalog-app/js/app.3864fe88.js rel=preload as=script>
+<link href=/static/catalog-app/js/chunk-vendors.a38376ff.js rel=preload as=script>
+<link href=/static/catalog-app/css/chunk-vendors.6764dacd.css rel=stylesheet>
+{% endblock %}
+
+{% block content %}
+	<div class="wrap-content">
+	
+		<div class="breacrumbs-block">
+			<div class="breacrumbs">
+				<div class="breacrumbs-name">Главная</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name">Каталог товаров</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name active-crumbs">Электросамокаты</div>
+			</div>
+			<div class="social-block">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+			</div>
+		</div>
+		
+		<div class="content-block">
+			<h1 class="page-header">Электросамокаты</h1>
+			<div class="page-content">
+				Стандартных недорогих самокатов действительно не мало, особенно — детских и для поклонников экстремального отдыха. Обычные самокаты развивают маленькую скорость и часто сделаны из не прочных материалов таких как пластмасса, и как правило они не долговечны.
+				Стандартных недорогих самокатов действительно не мало, особенно — детских и для поклонников экстремального отдыха. Обычные самокаты развивают маленькую скорость и часто сделаны из не прочных материалов таких как пластмасса, и как правило они не долговечны. 
+			</div>
+		</div>
+		
+		<div id=catalog-app></div>
+		
+	</div>
+
+
+{% endblock %}
+
+{% block bottomJavascript %}
+<script src=/static/catalog-app/js/chunk-vendors.a38376ff.js></script>
+<script src=/static/catalog-app/js/app.3864fe88.js></script>
+{% endblock %}

@@ -1,0 +1,668 @@
+{% extends "index.html" %}
+
+{% block title %}{{ product.seo_title }}{% endblock %}
+{% block description %}{{ product.seo_desc }}{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="/static/css/slick.css"/>
+	
+	<link href=/static/product-cart-slider-app/css/chunk-vendors.23d90689.css rel=preload as=style>
+	<link href=/static/product-cart-slider-app/js/app.9cb75c14.js rel=preload as=script>
+	<link href=/static/product-cart-slider-app/js/chunk-vendors.3f578916.js rel=preload as=script>
+	<link href=/static/product-cart-slider-app/css/chunk-vendors.23d90689.css rel=stylesheet>
+	
+{% endblock %}
+
+{% block javascript %}
+	<script src="/static/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/slick.min.js"></script>
+	<script type="text/javascript" src="/static/js/products.js"></script>
+	<script type="text/javascript" src="/static/js/products-comments.js"></script>
+{% endblock %}
+
+{% block content %}
+	<div class="wrap-content">
+	
+		<div class="breacrumbs-block">
+			<div class="breacrumbs">
+				<div class="breacrumbs-name">Главная</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name">Каталог товаров</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name">{{ category.name }}</div>
+				<img class="breacrumbs-icon" src="/static/img/breacrumbs-right.png">
+				<div class="breacrumbs-name active-crumbs">{{ product.name }}</div>
+			</div>
+			<div class="social-block">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+				<img class="social" src="/static/img/social.png">
+			</div>
+		</div>
+		
+		<div class="header-block">
+			<div class="header-name">
+				<h1>{{ product.name }}</h1>
+			</div>
+			<div class="header-rating">
+				<div class="product-rating">
+					<img class="star" src="/static/img/raiting-fill.png">
+					<img class="star" src="/static/img/raiting-fill.png">
+					<img class="star" src="/static/img/raiting-fill.png">
+					<img class="star" src="/static/img/raiting-fill.png">
+					<img class="star" src="/static/img/raiting.png">
+				</div>
+				<div class="header-rating-name">
+					Рейтинг: 157,7
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="product-cart-sliders">
+		
+			<div class="main-category-select x320">
+				
+				<div class="name">
+					<div class="main-category-products-bottom-name">Выберите цвет</div>
+					<img class="main-arrow-top-bottom" src="/static/img/arrow-top-bottom.png">
+				</div>
+				
+				<div class="colors">
+				
+					{% for color in colors %}
+						<div class="color-block" data-article-id="{{ color.article }}" data-article-name="{{ color.name }}" data-color-id="{{ color.id }}" data-product-id="{{ color.pid }}">
+							{% if color.img != '' %}
+								<div class="color" style="background-image: url('{{ color.img }}');"></div>
+							{% else %}
+								<div class="color" style="background: {{ color.code }};"></div>
+							{% endif %}
+							
+							<div class="color-name">{{ color.name }}</div>
+						</div>
+					{% endfor %}
+	
+				</div>
+				
+			</div>
+			
+			<div class="product-cart-advantages x768 colors-block">
+				<div id="color-prev" class="advantages-arrow-left">
+					<img src="/static/img/arrow-left.png">
+				</div>
+				<div class="product-cart-advantages-name">Выберите цвет:</div>
+				
+				<div class="wrap-sliders">
+					<div class="slider-advantages-images">
+					
+						{% for color in colors %}
+							<div class="wrap-advantages-images">
+								<div class="advantages-images {% if color.default %}active{% endif %}" data-article-id="{{ color.article }}" data-article-name="{{ color.article }}" data-color-id="{{ color.id }}" data-product-id="{{ color.pid }}">
+									{% if color.img != '' %}
+										<div class="advantages-color" style="background-image: url('{{ color.img }}');">
+											<img class="advantages-color-active {% if color.default %}true{% endif %}" src="/static/img/product-colors-check.png">
+										</div>
+									{% else %}
+										<div class="advantages-color" style="background: {{ color.code }};">
+											<img class="advantages-color-active {% if color.default %}true{% endif %}" src="/static/img/product-colors-check.png">
+										</div>
+									{% endif %}
+									<div class="advantages-images-name">
+										<span>{{ color.name }}</span>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+						
+					</div>
+				</div>
+				
+				<div id="color-next" class="advantages-arrow-right" >
+					<img src="/static/img/slider-arrow-right.png">
+				</div>
+				
+			</div>
+			
+			
+			<div class="product-cart-advantages pickings-block">
+				<div id="pickings-prev" class="advantages-arrow-left">
+					<img src="/static/img/arrow-left.png">
+				</div>
+				
+				<div class="wrap-sliders">
+					<div class="slider-pickings-images">
+						{% for object in pickings %}
+							<div class="wrap-pickings-images">
+								<div class="advantages-images">
+									<div class="advantages-images-img">
+										<img src="{{ object.img }}">
+									</div>
+									<div class="advantages-images-name">
+										{{ object.name }}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div id="pickings-next" class="advantages-arrow-right">
+					<img src="/static/img/slider-arrow-right.png">
+				</div>
+			</div>
+		</div>
+
+		<div id="productID" class="product-cart-block" data-product-id="{{ product.id }}">
+		
+			<div class="left-product-block">
+				
+				<div class="action-block">
+					<img src="/static/img/product-action-1.png">
+				</div>
+
+				<div class="product-img">
+					<img id="main-img" src="{{ product.poster }}">
+				</div>
+
+				<div class="product-pagination-imgs">
+
+					<div id="images-prev" class="product-pagination-arrow-left">
+						<img src="/static/img/arrow-left.png">
+					</div>
+					
+					<div class="slider-images">
+						
+						{% for color in colors %}
+							{% if color.default %}
+								{% for image in images %}
+									{% if color.id == image.cid %}
+										<div class="product-pagination-sub-images {% if loop.index <= 1 %}visible{% endif %}" data-image-id="{{ image.id }}">
+											<img src="/static/img/product-slider-arrow-top.png" class="slider-active">
+											<img class="pagination-image" src="{{ image.name }}">
+										</div>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						{% endfor %}
+						
+					</div>
+
+					<div id="images-next" class="product-pagination-arrow-right">
+						<img src="/static/img/slider-arrow-right.png">
+					</div>
+				</div>
+
+				<div class="product-feat-block x768">
+
+					{% for characteristic in characteristics %}
+						{% if loop.index <= 5 %}
+							<div class="product-feat">
+								<div class="product-feat-key">{{ characteristic.characteristic.name }}</div>
+								<div class="product-feat-val">{{ characteristic.cvalue.name }}</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+					
+					<a href="#tab-2" class="product-feat-all" data-id="2">Все характеристики</a>
+					
+				</div>
+				
+			</div>
+			<div class="right-product-block">
+			
+				<div class="product-article-manufacturer-block">
+					<div class="product-article">
+						<div class="product-article-name">Артикул:</div>
+						{% for color in colors %}
+							{% if color.default %}
+								<div id="article" class="product-article-val" data-article-id="{{ color.article }}" data-cid="{{ color.id }}">
+									{{ color.article }}
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+					
+					<div class="product-manufacturer">
+						<div class="product-manufacturer-name">
+							Производитель:
+						</div>
+						<div class="product-manufacturer-val">
+							{{ manufacturer.name }}
+						</div>
+					</div>
+				</div>
+				
+				<div class="product-price-block">
+					
+					<div class="product-price">{{ product.price }} руб.</div>
+					
+					{% if product.old_price %}
+						
+						<div class="product-action-block">
+							<div class="old-price">{{ product.old_price }} руб.</div>
+							<div class="all-categories-count">-{{ procent }}%</div>
+						</div>
+						
+					{% endif %}
+				</div>
+				
+				<div class="product-feat-block x320">
+					{% for characteristic in characteristics %}
+						{% if loop.index <= 5 %}
+							<div class="product-feat">
+								<div class="product-feat-key">{{ characteristic.characteristic.name }}</div>
+								<div class="product-feat-val">{{ characteristic.cvalue.name }}</div>
+							</div>
+						{% endif %}
+					{% endfor %}
+					<a href="#tab-2" class="product-feat-all" data-id="2">Все характеристики</a>
+				</div>
+				
+				{% if options %}
+					<div class="product-additional-option-block">
+						<div class="product-additional-option-name">Дополнительные опции</div>
+						<div class="icon-border"></div>
+						<div class="wrap-product-additional-option">
+							{% for options in options %}
+								<div class="product-additional-option" data-id="{{ options.id }}">
+									<div class="filter-checkbox">
+										<img src="/static/img/checkboxcheck.png" class="filter-checkbox-check">
+									</div>
+									<div class="product-additional-option-val">
+										<div class="product-additional-option-val-name">
+											{{ options.name }}
+										</div>
+										<div class="product-additional-option-val-price">
+											+ {{ options.price }} руб.
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endif %}
+				
+				{% if stock %}
+					<div class="stocks select-product-manufacturer filter">
+						<div class="filter-name">{{ stock.stock.name }}</div>
+						<div class="icon-border"></div>
+						
+						<div class="filters-select" >
+							<div class="main-category-select">
+								{% for gift in stock.gifts %}
+									{% if loop.first %}
+										<div id="stocks-default" class="main-category-products-bottom-name" data-id="{{ gift.id }}">{{ gift.name }}</div>
+									{% endif %}
+								{% endfor %}
+								<img class="main-arrow-top-bottom" src="/static/img/arrow-top-bottom.png">
+							</div>
+						</div>
+
+						<div class="gifts-block">
+							
+							{% for gift in stock.gifts %}
+								<div class="gift" data-id="{{ gift.id }}" data-name="{{ gift.name }}">
+									<div class="icon">
+										<img src="http://95.183.9.37/{{ gift.path }}gifts.{{ gift.img_format }}">
+									</div>
+									<div class="name">{{ gift.name }}</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				{% endif %}
+				
+				<div class="product-order-block">
+					<div class="wrap-product-order">
+						<img id="add-basket" src="/static/img/add-basket.png" class="product-add-basket">
+						<img src="/static/img/quick-order.png" class="quick-order">
+					</div>
+					<div class="wrap-market-status">
+						<img src="/static/img/market-status.png" class="market-status">
+					</div>
+					
+					<div class="callback-block static">
+						<div class="callback-back"></div>
+						<div class="callback-form-block">
+							<div class="callback-form">
+								<div class="callback-form-head close">
+									<div class="name">Быстрый заказ товара</div>
+									<img src="/static/img/close.png">
+								</div>
+								<div class="icon-border"></div>
+
+								<div class="order-form-input-block">
+									<div class="order-form-input-head">
+										<div class="order-form-input-name">Имя *</div>
+									</div>
+									<div class="wrap-order-form-input">
+										<input id="quick-order-name" placeholder="Степан" class="order-form-input">
+									</div>
+								</div>
+								
+								<div class="order-form-input-block">
+									<div class="order-form-input-head">
+										<div class="order-form-input-name">Телефон *</div>
+									</div>
+									<div class="wrap-order-form-input">
+										<input id="quick-order-phone" placeholder="например +7(999)-999-99-99" class="order-form-input">
+									</div>
+								</div>
+								<div class="order-form-input-block">
+									<div class="order-form-input-name">Комментарий</div>
+									<div class="order-form-textarea-block">
+										<div class="wrap-order-form-textarea">
+											<textarea id="quick-order-comment" placeholder="Просьба курьеру позвонить перед доставкой." class="order-form-textarea"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="send-request static">
+									<div class="wrap-callback">
+										<div class="callback-background">
+											<div class="wrap-callback-background"></div>
+										</div>
+										<div class="callback">
+											<div class="callback-name">Заказать</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="product-order-info-block x320 x1200">
+					<div class="product-order-info">
+						<div class="product-order-info-icon">
+							<img src="/static/img/products-icon-1.png">
+						</div>
+						<div class="product-order-info-text">
+							<div class="product-order-info-name">
+								Самовывоз
+							</div>
+							<div class="product-order-info-val">
+								г. Санкт-Петербург , Басков переулок, д.26 , магазин "ElectroStreet"
+							</div>
+						</div>
+					</div>
+					
+					<div class="product-order-info">
+						<div class="product-order-info-icon">
+							<img src="/static/img/products-icon-2.png">
+						</div>
+						<div class="product-order-info-text">
+							<div class="product-order-info-name">
+								Доставка
+							</div>
+							<div class="product-order-info-val">
+								Сегодня: курьером / самовывоз с нашего магазина (бесплатно)
+							</div>
+						</div>
+					</div>
+					
+					<div class="product-order-info last">
+						<div class="product-order-info-icon">
+							<img src="/static/img/products-icon-3.png">
+						</div>
+						<div class="product-order-info-text">
+							<div class="product-order-info-name">
+								Оплата
+							</div>
+							<div class="product-order-info-val">
+								Наличные, электронные деньги, Сбербанк, безналичная оплата
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+		
+		<div class="product-order-info-block x768">
+					
+			<div class="product-order-info">
+				<div class="product-order-info-icon">
+					<img src="/static/img/products-icon-1.png">
+				</div>
+				<div class="product-order-info-text">
+					<div class="product-order-info-name">
+						Самовывоз
+					</div>
+					<div class="product-order-info-val">
+						г. Санкт-Петербург , Басков переулок, д.26 , магазин "ElectroStreet"
+					</div>
+				</div>
+			</div>
+			
+			<div class="product-order-info">
+				<div class="product-order-info-icon">
+					<img src="/static/img/products-icon-2.png">
+				</div>
+				<div class="product-order-info-text">
+					<div class="product-order-info-name">
+						Доставка
+					</div>
+					<div class="product-order-info-val">
+						Сегодня: курьером / самовывоз с нашего магазина (бесплатно)
+					</div>
+				</div>
+			</div>
+			
+			<div class="product-order-info">
+				<div class="product-order-info-icon">
+					<img src="/static/img/products-icon-3.png">
+				</div>
+				<div class="product-order-info-text">
+					<div class="product-order-info-name">
+						Оплата
+					</div>
+					<div class="product-order-info-val">
+						Наличные, электронные деньги, Сбербанк, безналичная оплата
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="tab-2" class="product-description-block">
+		
+			<div class="tabs-mobile filters-select x320">
+				<div class="main-category-select">
+					<div class="main-category-products-bottom-name">Обзор</div>
+					<img class="main-arrow-top-bottom" src="/static/img/arrow-top-bottom.png">
+				</div>
+				
+				<div class="tabs-block">
+					<div class="product-tab-name active" data-id="1">Обзор</div>
+					<div class="product-tab-name" data-id="2">Характеристики</div>
+					<div class="product-tab-name" data-id="3">Отзывы</div>
+				</div>
+
+			</div>
+			
+			<div class="product-tabs x768">
+			
+				<div class="product-tab-name active" data-id="1">Обзор</div>
+				<div class="product-tab-name" data-id="2">Характеристики</div>
+				<div class="product-tab-name" data-id="3">Отзывы</div>
+				
+				<div class="product-tab-name-last"></div>
+			</div>
+			
+			<div class="product-content">
+				<div class="content active" data-id="1">
+					{{ product.content|safe }}
+				</div>
+				<div class="content" data-id="2">
+					<div class="product-feat-block">
+						{% for characteristic in characteristics %}
+							<div class="product-feat">
+								<div class="product-feat-key">{{ characteristic.characteristic.name }}</div>
+								<div class="product-feat-val">{{ characteristic.cvalue.name }}</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="content" data-id="3">
+					<div class="spec-line">
+						<div class="add-comments">оставить отзыв</div>
+					
+						<div id="comments-form" class="callback-block">
+							<div class="callback-back"></div>
+							<div class="callback-form-block">
+								<div class="callback-form">
+									<div class="callback-form-head">
+										<div class="name">Оставить отзыв</div>
+										<img src="/static/img/close.png">
+									</div>
+									<div class="icon-border"></div>
+									<div class="order-form-input-block">
+										<div class="wrap-order-form-input">
+											<input id="user-name" placeholder="*Имя" class="order-form-input">
+										</div>
+									</div>
+									
+									<div class="order-form-input-block">
+										<div class="wrap-order-form-input">
+											<input id="user-city" placeholder="*Город" class="order-form-input">
+										</div>
+									</div>
+									
+									<div class="comments-rating set-rating">
+										<div class="name">Ваш рейтинг:</div>
+										<img class="star" src="/static/img/raiting-fill.png" data-rating="1"/>
+										<img class="star" src="/static/img/raiting.png" data-rating="2"/>
+										<img class="star" src="/static/img/raiting.png" data-rating="3"/>
+										<img class="star" src="/static/img/raiting.png" data-rating="4"/>
+										<img class="star" src="/static/img/raiting.png" data-rating="5"/>
+									</div>
+									
+									<div class="order-form-input-block">
+										<div class="wrap-order-form-input">
+											<input id="user-positive" placeholder="Плюсы" class="order-form-input">
+										</div>
+									</div>
+									
+									<div class="order-form-input-block">
+										<div class="wrap-order-form-input">
+											<input id="user-negative" placeholder="Минусы" class="order-form-input">
+										</div>
+									</div>
+									
+									<div class="order-form-input-block">
+										<div class="order-form-textarea-block">
+											<div class="wrap-order-form-textarea">
+												<textarea  id="user-comment" placeholder="*Комментарий..." class="order-form-textarea"></textarea>
+											</div>
+										</div>
+									</div>
+									<div class="err"></div>
+									<div class="send-request active comment">
+										<div class="wrap-callback">
+											<div class="callback-background"><div class="wrap-callback-background"></div></div>
+											<div class="callback"><div class="callback-name">Отправить</div></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="comments">
+				
+						{% for comment in comments %}
+						
+							{% if comment.cid == 0 %}
+								<div class="main-comment">
+									<div class="main-comment-top">
+										<div class="main-comment-icon">
+											<img src="/static/img/user-icon.png">
+										</div>
+										
+										<div class="comments-main-info-block">
+											<div class="wrap-wrap-main-comment-top">
+												<div class="main-comment-name">{{ comment.user_name }}</div>
+												<div class="main-comment-city">({{ comment.city }})</div>
+											</div>
+											<div class="blog-date">
+												<img class="blog-date-icon" src="/static/img/blog-date-icon.png">
+												<div class="blog-date-date">{{ comment.created | dateformat }}</div>
+											</div>
+											<div class="product-rating">
+												{% for i in range(0, 5) %}
+													{% if comment.rating > i %}
+														<img class="star" src="/static/img/raiting-fill.png">
+													{% else %}
+														<img class="star" src="/static/img/raiting.png">
+													{% endif %}
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+									<p class="main-comment-body">
+										{% if comment.status %}
+											{{ comment.name }}
+										{% else %}
+											комментарий проверяется...
+										{% endif%}
+									</p>
+									
+									<div class="positive-and-negative-content">
+									
+										{% if comment.positive != '' %}
+											<div class="positive-block">
+												<div class="img"><img src="/static/img/like.png"></div>
+												<div class="comments-content">{{ comment.positive }}</div>
+											</div>
+										{% endif %}
+										
+										{% if comment.negative != '' %}
+											<div class="negative-block">
+												<div class="img"><img src="/static/img/dislakes.png"></div>
+												<div class="comments-content">{{ comment.negative }}</div>
+											</div>
+										{% endif %}
+										
+									</div>
+									
+									{% for sub_comments in comments %}
+										{% if comment.id == sub_comments.cid %}
+											<div class="sub-comments">
+												<div class="name">администратор</div>
+												<div class="comments-content">
+													{{ sub_comments.name }}
+												</div>
+											</div>
+										{% endif %}
+									{% endfor %}
+									
+								</div>
+							{% endif %}
+						{% endfor %}
+
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+		
+		<div class="additinal-products">
+			<div id=slider-app></div>
+		</div>
+		
+	
+	</div>
+
+	{% block bottomJavascript %}
+	<script src=/static/product-cart-slider-app/js/chunk-vendors.3f578916.js></script>
+	<script src=/static/product-cart-slider-app/js/app.9cb75c14.js></script>
+	{% endblock %}
+		
+{% endblock %}
